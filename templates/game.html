@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block header %}
+<header>
+    <h1> Page  "{{ title }}" / Score : {{ score }}
+        <a href="/">
+            <img alt="exit" src="/static/images/exit.png" class="exit"/>
+        </a>
+    </h1>
+</header>
+{% endblock %}
+
+{% block form %}
+<form method="post" action="/move">
+    <div class="form_data">
+        {% for i in href %}
+            {% if loop.first %}
+                <input type="radio" name="list_links" id={{"i"+loop.index|string}} value={{i}} checked="checked">
+                <label for={{"i"+loop.index|string}}>{{i}}</label><br/>
+            {% else %}
+                <input type="radio" name="list_links" id={{"i"+loop.index|string}} value={{i}}>
+                <label for={{"i"+loop.index|string}}>{{i}}</label><br/>
+            {% endif %}
+        {% endfor %}
+        <input type="hidden" name="score" id="score" value={{score}}>
+    </div>
+    <div class="form_button">
+        <input type="submit" value="Valider nouvelle recherche">
+    </div>
+</form>
+
+{% endblock %}
+

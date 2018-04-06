@@ -1,0 +1,96 @@
+/* Le CSS va ici */
+
+* {
+    font-family: arial;
+}
+
+
+/* Gestion du header */
+
+h1 {
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    background-color: black;
+    padding: 1%;
+}
+
+.exit {
+    float: right;
+}
+
+
+/* Gestion des messages */
+
+.message {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+    margin: 0.5em;
+    font-weight: bold;
+}
+
+.error {
+    color : red;
+}
+
+
+.success {
+    color : green;
+}
+
+/* Gestion des formulaires */
+
+form {
+    text-align:center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    border-width:0.5em;
+    border-style:outset;
+    width : 80%;
+}
+
+
+.form_data {
+    display: inline-block;
+    text-align:left;
+    margin-left: auto;
+    width : 70%;
+
+}
+
+.form_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+
+input, label {
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+
+label:hover {color: grey;}
+
+input[type=submit] {
+  padding: 0.5em 0.5em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+input[type=submit]:hover {background-color: #3e8e41}
+
+input[type=submit]:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

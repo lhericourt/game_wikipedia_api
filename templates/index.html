@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Tous les chemins mènent à la philosophie</title>
+  </head>
+  <body>
+
+    {% block header %}
+    <header>
+      <h1> Acceuil du jeu "Tous les chemins mènent à la philosophie"</h1>
+    </header>
+    {% endblock %}
+
+    {% block message %}
+    <div class="message">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                <p class="{{category}}"> {{ message }} </p>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </div>
+    {% endblock %}
+
+    {% block form %}
+    <form method="post" action="/new-game">
+          <div class="form_data">
+              <label>Titre de la page wiki à rechercher : </label>
+              <input type="text" name="title" id="title" />
+              <input type="hidden" name="score" id="score" value=0>
+          </div>
+          <div class="form_button">
+              <input type="submit" value="New Game" />
+          </div>
+      </form>
+    {% endblock %}
+  </body>
+</html>
